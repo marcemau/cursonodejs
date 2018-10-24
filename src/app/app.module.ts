@@ -1,16 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
+import { ListComponent } from './list/list.component';
+import { NewItemComponent } from './new-item/new-item.component';
+import { RouterModule} from '@angular/router';
+import {MockItemsService} from './_services/mock-items.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListComponent,
+    NewItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, ReactiveFormsModule, RouterModule
   ],
-  providers: [],
+  providers: [MockItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
